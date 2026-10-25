@@ -1,0 +1,190 @@
+/* ====== Background video ====== */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* ====== Container ====== */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 0;
+    padding: 20px;
+}
+
+/* ====== Chat box ====== */
+#chat-box {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    border-radius: 12px;
+    height: 400px;
+    overflow-y: auto;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+/* ====== Input wrapper ====== */
+.input-wrapper {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ====== Bouton + ====== */
+.plus-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #111;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+.plus-btn:hover {
+    background: #1c1c1c;
+    transform: scale(1.07);
+}
+
+.plus-btn:active {
+    transform: scale(0.95);
+}
+
+/* ====== Champ texte ====== */
+#user-input {
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+}
+
+/* ====== Bouton envoyer ====== */
+.send-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #00eaff;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+.send-btn:hover {
+    transform: scale(1.07);
+}
+
+/* ====== Titre holographique animé ====== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+
+.title-holo-ultimate {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 6px;
+    font-weight: 800;
+    position: relative;
+
+    background: linear-gradient(90deg,
+        #00eaff,
+        #ff00ff,
+        #00ff9d,
+        #ff8800,
+        #00eaff);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: holoFlow 6s linear infinite;
+}
+
+.title-holo-ultimate::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 100%;
+    border-radius: 10px;
+    background: radial-gradient(circle,
+        rgba(0, 255, 255, 0.4) 0%,
+        rgba(0, 255, 255, 0) 70%);
+    filter: blur(25px);
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+.title-holo-ultimate::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: holoScan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes holoFlow {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+@keyframes holoScan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+
+#file-preview {
+    margin: 10px 0;
+}
+
+.file-box {
+    background: rgba(0,0,0,0.6);
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
